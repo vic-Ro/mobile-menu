@@ -1,0 +1,72 @@
+$width: 65px;
+$height: 65px;
+$purple:rgb(128, 90, 213);
+$hover: rgb(30,33,41);
+$background: rgb(36,40,49);
+$activator: rgb(41,46,56);
+
+body {
+  margin: 0;
+  background-color: #444;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding: 20px
+}
+
+.box1 {
+  z-index: 200;
+  min-width: $width;
+  min-height: $height;
+  background-color: $activator;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: border-radius .5s;
+  &:hover{
+    background-color: $hover;
+  }
+  &--active{
+    border-radius: 50% 0 0 50%;
+    background-color: $purple;
+    &:hover{
+      background-color: $purple;
+      border-right: 2px solid rgb(49, 39, 68);
+      margin-right: -2px;
+    }
+  }
+}
+
+.box2 {
+  z-index: 100;
+  min-width: $width*3.5;
+  height: $height;
+  background-color: $activator;
+  cursor: pointer;
+  clip-path: ellipse(0% 0% at -50%);
+  transition: clip-path .5s, border-radius .5s;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  &--active{
+    clip-path: ellipse(100% 100%);
+    border-radius: 0 5em 5em 0;
+  }
+}
+
+img {
+  width: $width*.5;
+  height: $height*.5;
+  padding: .3em;
+}
+
+.box2 > img {
+  &:hover {
+    background-color: $hover;
+    border-radius: 50%;
+  }
+}

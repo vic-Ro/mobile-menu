@@ -1,0 +1,2 @@
+(()=>{"use strict";var e=document.querySelector(".box1"),t=document.querySelector(".box2");e.addEventListener("click",(function(){e.classList.toggle("box1--active"),t.classList.toggle("box2--active")}))})();
+//# sourceMappingURL=app.549723206337ce2905d6.js.map
